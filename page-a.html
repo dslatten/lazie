@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Page A</title>
+    <meta name="description" content="No dependencies defined in RequireJS config. No data-main attribute in script tag." />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/init-a.js"></script>
+</head>
+<body>
+
+    <div class="lazie">
+        <div class="page">
+            <div class="page-inner">
+                <h1>Page A</h1>
+                <ul>
+                    <li>Dependencies defined via <code>require.deps</code> global object property?</li>
+                    <li>Callback function defined via <code>require.callback</code> global object property?</li>
+                    <li>Dependencies defined in <code>main.js</code> via <code>require.config({})</code>?</li>
+                    <li>Callback function defined in <code>main.js</code> via <code>require.config({})</code>?</li>
+                    <li><code>main.js</code> referenced via <code>data-main</code> attribute in <code>script</code> tag?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="app">
+        <h2 class="app-title">applicationHost</h2>
+        <div class="page">
+            <div id="applicationHost"></div>
+        </div>
+    </div>
+
+</body>
+</html>
