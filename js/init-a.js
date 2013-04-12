@@ -4,6 +4,9 @@
 
 (function() {
 
+    // Avoid errors in browsers that don't support console.log()
+    if ( ! window.console ) console = { log: function() {} };
+
     console.log('Begin init-a.js IIFE');
 
     // RequireJS config
