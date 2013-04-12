@@ -42,7 +42,7 @@
 
         },
 
-        callback: function($, ko) {
+        callback: function() {
             require(['jQuery', 'knockout', 'require'],
             function($, ko, require) {
                 require(['app/main-a']);

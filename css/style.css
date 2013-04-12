@@ -8,12 +8,24 @@ body {
     line-height: 1.5;
 }
 
+.lazie {
+    font-size: medium;
+}
+
 .lazie h1,
 .lazie h2,
 .app-title {
     margin: 0.5em 0;
     text-align: center;
     font-family: Georgia, serif;
+}
+
+.lazie p {
+    margin: 1.5em 0;
+}
+
+.lazie .highlight {
+    background-color: #ff6;
 }
 
 .page {
@@ -24,6 +36,9 @@ body {
     box-shadow: 0 0 0.5em 0 rgba(63, 63, 63, 0.5);
 }
 
+.page-inner {
+    padding: 2em;
+}
 
 .app .page {
     width: 960px;
@@ -35,9 +50,6 @@ body {
 .app .page-host {
     top: 0;
     margin-bottom: 20px;
-}
-.page-inner {
-    padding: 2em;
 }
 
 
