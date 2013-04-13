@@ -3,12 +3,18 @@ body {
     padding: 0;
     overflow-y: scroll;
     background-color: #f9f9f9;
-    color: #666;
     font-family: sans-serif;
-    line-height: 1.5;
 }
 
 
+
+.clear {
+    clear: both;
+}
+
+/* ---------------------------------- *\
+    applicationHost
+\* ---------------------------------- */
 
 .app-title {
     font-size: large;
@@ -30,19 +36,46 @@ body {
     margin-bottom: 20px;
 }
 
+/* ---------------------------------- *\
+    Main page (non-app) content
+\* ---------------------------------- */
 
-
-.lazie {
+body .lazie {
     font-size: medium;
+    line-height: 1.5;
 }
 
-.lazie .page {
-    width: 36em;
-    margin: 5em auto;
-    padding: 2em;
-    background-color: #fff;
-    box-shadow: 0 0 .5em 0 rgba(63, 63, 63, .5);
-}
+    .lazie .page {
+        width: 60em;
+        margin: 0 auto;
+    }
+
+        .lazie .primary {
+            width: 36em;
+            margin-top: 5em;
+            padding: 2em;
+            float: left;
+            background-color: #fff;
+            box-shadow: 0 0 .5em 0 rgba(63, 63, 63, .5);
+        }
+
+        .lazie .secondary {
+            width: 16em;
+            margin-top: 5em;
+            padding: 2em;
+            float: left;
+        }
+
+            .lazie .secondary h2 {
+                font-size: large;
+                margin: 0 0 1em 0;
+                text-align: center;
+                font-weight: normal;
+            }
+
+            .lazie .secondary ul {
+                margin-left: 3.5em;
+            }
 
 .lazie h1,
 .lazie h2,
@@ -72,7 +105,7 @@ body {
 }
 
 .lazie .highlight {
-    background-color: #ff6;
+    background-color: #ff9;
 }
 
 

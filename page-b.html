@@ -17,11 +17,15 @@
 
     <div class="lazie">
         <div class="page">
-            <h1><a href="page-b.html">Page B</a></h1>
-            <h2>1.&#x00a0;&#x00a0;Load <a href="js/init-b.js">init-b.js</a></h2>
-            <p>
-                <a href="js/init-b.js">init-b.js</a> is hard-coded in the page's <code>&lt;head&gt;</code> section. This is the only hard-coded <code>&lt;script&gt;</code> element in this document; the other scripts are dynamically appended to the <code>&lt;head&gt;</code>.
-            </p>
+            <div class="primary">
+                <h1><a href="page-b.html">Page B</a></h1>
+                <p>
+                    The following content represents a basic overview of this page's script structure and [intended] execution flow. For a better (more reliable?) explanation of this page's loading behavior, check out the WebPagetest.org results.&#x00a0;&#x00a0;==>
+                </p>
+                <h2>1.&#x00a0;&#x00a0;Load <a href="js/init-b.js">init-b.js</a></h2>
+                <p>
+                    <a href="js/init-b.js">init-b.js</a> is hard-coded in the page's <code>&lt;head&gt;</code> section. This is the only hard-coded <code>&lt;script&gt;</code> element in this document; the other scripts are dynamically appended to the <code>&lt;head&gt;</code>.
+                </p>
 <pre>
 <code>
     &lt;head&gt;
@@ -32,18 +36,18 @@
     &lt;/head&gt;
 </code>
 </pre>
-            <h2>2.&#x00a0;&#x00a0;Execute <a href="js/init-b.js">init-b.js</a></h2>
-            <p>
-                <a href="js/init-b.js">init-b.js</a> has two main sections of code:
-            </p>
-            <ol>
-                <li>an immediately-invoked function expression (IIFE), and</li>
-                <li>a function definition for <code>lazyFunction()</code>, which is attached to the <code>window.load</code> event.</li>
-            </ol>
-            <h3>2.1.&#x00a0;&#x00a0;Execute IIFE</h3>
-            <p>
-                Neither dependencies ( <code>require.deps</code> ) nor a callback function ( <code>require.callback</code> ) are defined in the <code>require</code> global object's configuration.
-            </p>
+                <h2>2.&#x00a0;&#x00a0;Execute <a href="js/init-b.js">init-b.js</a></h2>
+                <p>
+                    <a href="js/init-b.js">init-b.js</a> has two main sections of code:
+                </p>
+                <ol>
+                    <li>an immediately-invoked function expression (IIFE), and</li>
+                    <li>a function definition for <code>lazyFunction()</code>, which is attached to the <code>window.load</code> event.</li>
+                </ol>
+                <h3>2.1.&#x00a0;&#x00a0;Execute IIFE</h3>
+                <p>
+                    Neither dependencies ( <code>require.deps</code> ) nor a callback function ( <code>require.callback</code> ) are defined in the <code>require</code> global object's configuration.
+                </p>
 <pre>
 <code>
     (function() {
@@ -52,25 +56,26 @@
 
             // ...
 
-            // callback: undefined
+            <span class="highlight">// callback: undefined</span>
 
-            // deps: undefined
+            <span class="highlight">// deps: undefined</span>
 
         };
 
     }());
 </code>
 </pre>
-            <h3>2.2.&#x00a0;&#x00a0;Define <code>lazyFunction()</code> &#x0026; Attach to <code>window.load</code></h3>
-            <p>
-                <a href="lib/require/require.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is set to <a href="app/main-b.js">main-b.js</a>, which tells <a href="lib/require/require.js">require.js</a> to load it next (i.e., as soon as <a href="lib/require/require.js">require.js</a> is done loading).
-            </p>
+                <h3>2.2.&#x00a0;&#x00a0;Define <code>lazyFunction()</code> &#x0026; Attach to <code>window.load</code></h3>
+                <p>
+                    <a href="lib/require/require.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is set to <a href="app/main-b.js">main-b.js</a>, which tells <a href="lib/require/require.js">require.js</a> to load it next (i.e., as soon as <a href="lib/require/require.js">require.js</a> is done loading).
+                </p>
 <pre>
 <code>
     var lazyFunction = function() {
         var s = document.createElement('script');
         s.type = 'text/javascript';
         s.src = 'lib/require/require.js';
+        <span class="highlight">s.setAttribute('data-main', 'app/main-b');</span>
         document.getElementsByTagName('head')[0].appendChild(s);
     }
 
@@ -79,9 +84,29 @@
     }
 </code>
 </pre>
-            <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.js">require.js</a></h2>
-            <h2>4.&#x00a0;&#x00a0;Load &#x0026; Execute jquery.js and knockout.js</h2>
-            <h2>5.&#x00a0;&#x00a0;Load <a href="app/main-b.js">main-b.js</a> and Begin App</h2>
+                <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.js">require.js</a></h2>
+                <h2>4.&#x00a0;&#x00a0;Load <a href="app/main-b.js">main-b.js</a> and Begin App</h2>
+            </div>
+
+            <div class="secondary">
+                <h2><a href="http://www.webpagetest.org/">WebPagetest.org</a> Results</h2>
+                <ul>
+                    <li><a href="http://www.webpagetest.org/result/130413_SX_PQD/">IE6</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_WJ_PQG/">IE7</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_VR_PQS/">IE8</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_SQ_PR4/">IE9</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_5A_PRD/">IE10</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_F5_PX7/">Firefox</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_HC_PXT/">Chrome</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_W4_PYD/">Safari (Windows)</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_5J_PYV/">iOS 5.1 (iPhone 4)</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_9H_Q2Q/">IE6 + Chrome Frame</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130413_W5_Q34/">Android 2.1 (Nexus S)</a></li>
+                </ul>
+            </div>
+
+            <div class="clear"></div>
+
         </div>
     </div>
 
