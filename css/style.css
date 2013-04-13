@@ -8,48 +8,71 @@ body {
     line-height: 1.5;
 }
 
+
+
+.app-title {
+    font-size: large;
+    margin: 2em 0 .5em 0;
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+.app .page {
+    width: 960px;
+    margin: 0 auto;
+    border: .125em solid #ccc;
+    border-color: rgba(0, 0, 0, .15);
+    border-radius: 4px;
+}
+
+.app .page-host {
+    top: 0;
+    margin-bottom: 20px;
+}
+
+
+
 .lazie {
     font-size: medium;
 }
 
+.lazie .page {
+    width: 36em;
+    margin: 5em auto;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 .5em 0 rgba(63, 63, 63, .5);
+}
+
 .lazie h1,
 .lazie h2,
-.app-title {
-    margin: 0.5em 0;
-    text-align: center;
+.lazie h3 {
     font-family: Georgia, serif;
+}
+
+.lazie h1 {
+    margin: .5em 0;
+    text-align: center;
+}
+
+.lazie h2 {
+    margin: 2em 0 1em 0;
+}
+
+.lazie h3 {
+    margin: 2em 0 1em 0;
 }
 
 .lazie p {
     margin: 1.5em 0;
 }
 
+.lazie code {
+    font-size: .75em;
+}
+
 .lazie .highlight {
     background-color: #ff6;
-}
-
-.page {
-    width: 40em;
-    margin: 5em auto;
-    padding: 0;
-    background-color: #fff;
-    box-shadow: 0 0 0.5em 0 rgba(63, 63, 63, 0.5);
-}
-
-.page-inner {
-    padding: 2em;
-}
-
-.app .page {
-    width: 960px;
-    margin-top: 0;
-    box-shadow: none;
-    border: 0.125em solid #666;
-}
-
-.app .page-host {
-    top: 0;
-    margin-bottom: 20px;
 }
 
 

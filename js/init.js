@@ -38,7 +38,7 @@ var lazyFunction = function() {
             ],
 
             // CDN-hosted 3rd-party libs + local fallbacks
-            jQuery: [
+            jquery: [
                 '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min',
                 '/lib/jquery/jquery'
             ],
@@ -53,7 +53,7 @@ var lazyFunction = function() {
 
         },
 
-        deps: ['jQuery', 'knockout'],
+        deps: ['jquery', 'knockout'],
 
         callback: function() {
             require(['require'], function(require) {

@@ -15,11 +15,11 @@ require.config({
             '/lib/durandal'
         ],
         // CDN-hosted 3rd-party libs + local fallbacks
-        jQuery: [
+        jquery: [
             '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min',
             '/lib/jquery/jquery'
         ],
-        jQueryUi: [
+        jqueryUi: [
             '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min',
             '/lib/jquery-ui/js/jquery-ui'
         ],
@@ -33,8 +33,8 @@ require.config({
         ]
     },
     shim: {
-        'jQueryUi': {
-            deps: ['jQuery'],
+        'jqueryUi': {
+            deps: ['jquery'],
             exports: 'jQuery.ui'
         }
     }
@@ -42,7 +42,7 @@ require.config({
 
 
 define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router'],
-function(app, viewLocator, system, router) {
+function (app, viewLocator, system, router) {
 
     system.debug(true);
 

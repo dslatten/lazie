@@ -9,7 +9,7 @@
 <body>
 
     <div class="app">
-        <h2 class="app-title">applicationHost</h2>
+        <div class="app-title">applicationHost</div>
         <div class="page">
             <div id="applicationHost"></div>
         </div>
@@ -17,11 +17,11 @@
 
     <div class="lazie">
         <div class="page">
-            <div class="page-inner">
-                <h1><a href="page-a.html">Page A</a></h1>
-                <p>
-                    <a href="js/init-a.js">init-a.js</a> is hard-coded in the page's <code>&lt;head&gt;</code> section:
-                </p>
+            <h1><a href="page-a.html">Page A</a></h1>
+            <h2>1.&#x00a0;&#x00a0;Load <a href="js/init-a.js">init-a.js</a></h2>
+            <p>
+                <a href="js/init-a.js">init-a.js</a> is hard-coded in the page's <code>&lt;head&gt;</code> section. This is the only hard-coded <code>&lt;script&gt;</code> element in this document; the other scripts are dynamically appended to the <code>&lt;head&gt;</code>.
+            </p>
 <pre>
 <code>
     &lt;head&gt;
@@ -32,16 +32,18 @@
     &lt;/head&gt;
 </code>
 </pre>
-                <p>
-                    <a href="js/init-a.js">init-a.js</a> has two main sections of code:
-                </p>
-                <ol>
-                    <li>an immediately-invoked function expression (IIFE), and</li>
-                    <li>a function definition for <code>lazyFunction()</code>, which is attached to the <code>window.load</code> event.</li>
-                </ol>
-                <p>
-                    Dependencies <code>$</code> and <code>ko</code> are defined in the <abbr title="immediately invoked function expression">IIFE</abbr> in <a href="js/init-a.js">init-a.js</a>, via the <code>require</code> global object's <code>callback</code> property (i.e., the callback function to invoke when <a href="lib/require/require.js">require.js</a> is loaded):
-                </p>
+            <h2>2.&#x00a0;&#x00a0;Execute <a href="js/init-a.js">init-a.js</a></h2>
+            <p>
+                <a href="js/init-a.js">init-a.js</a> has two main sections of code:
+            </p>
+            <ol>
+                <li>an immediately-invoked function expression (IIFE), and</li>
+                <li>a function definition for <code>lazyFunction()</code>, which is attached to the <code>window.load</code> event.</li>
+            </ol>
+            <h3>2.1.&#x00a0;&#x00a0;Execute IIFE</h3>
+            <p>
+                Dependencies <code>$</code> and <code>ko</code> are defined in the <abbr title="immediately invoked function expression">IIFE</abbr> in <a href="js/init-a.js">init-a.js</a>, via the <code>require</code> global object's <code>callback</code> property (i.e., the callback function to invoke when <a href="lib/require/require.js">require.js</a> is loaded):
+            </p>
 <pre>
 <code>
     (function() {
@@ -51,7 +53,7 @@
             // ...
 
             callback: function() {
-                require(['jQuery', 'knockout', 'require'],
+                require(['jquery', 'knockout', 'require'],
                 function($, ko, require) {
                     require(['app/main-a']);
                 })
@@ -64,18 +66,27 @@
     }());
 </code>
 </pre>
-                <p>
-                    <a href="lib/require/require.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> (after the <code>window.load</code> event) by the following code. The <code>data-main</code> attribute isn't used:
-                </p>
+            <h3>2.2.&#x00a0;&#x00a0;Define <code>lazyFunction()</code> &#x0026; Attach to <code>window.load</code></h3>
+            <p>
+                <a href="lib/require/require.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is omitted, because <a href="app/main-a.js">main-a.js</a> is already referenced in the <code>require</code> object's <code>callback</code> configuration (defined in <a href="js/init-a.js">init-a.js</a>'s <abbr title="immediately invoked function expression">IIFE</abbr>).
+            </p>
 <pre>
 <code>
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = 'lib/require/require.js';
-    document.getElementsByTagName('head')[0].appendChild(s);
+    var lazyFunction = function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'lib/require/require.js';
+        document.getElementsByTagName('head')[0].appendChild(s);
+    }
+
+    window.onload = function() {
+        lazyFunction();
+    }
 </code>
 </pre>
-            </div>
+            <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.js">require.js</a></h2>
+            <h2>4.&#x00a0;&#x00a0;Load &#x0026; Execute jquery.js and knockout.js</h2>
+            <h2>5.&#x00a0;&#x00a0;Load <a href="app/main-a.js">main-a.js</a> and Begin App</h2>
         </div>
     </div>
 

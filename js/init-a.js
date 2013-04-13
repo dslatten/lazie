@@ -30,7 +30,7 @@
             ],
 
             // CDN-hosted 3rd-party libs + local fallbacks
-            jQuery: [
+            jquery: [
                 '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min',
                 'lib/jquery/jquery'
             ],
@@ -46,7 +46,7 @@
         },
 
         callback: function() {
-            require(['jQuery', 'knockout', 'require'],
+            require(['jquery', 'knockout', 'require'],
             function($, ko, require) {
                 require(['app/main-a']);
             })
