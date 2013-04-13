@@ -14,7 +14,7 @@
 
         enforceDefine: false,
 
-        baseUrl: '/',
+        baseUrl: './',
 
         paths: {
 
