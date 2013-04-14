@@ -46,7 +46,7 @@
                 </ol>
                 <h3>2.1.&#x00a0;&#x00a0;Execute IIFE</h3>
                 <p>
-                    Neither dependencies ( <code>require.deps</code> ) nor a callback function ( <code>require.callback</code> ) are defined in the <code>require</code> global object's configuration.
+                    Neither dependencies ( <code>require.deps</code> ) nor a callback function ( <code>require.callback</code> ) are defined in the <code>require</code> global object's configuration. It does, however, define a shim configuration for <a href="lib/sammy/sammy.js">sammy.js</a>.
                 </p>
 <pre>
 <code>
@@ -56,9 +56,16 @@
 
             // ...
 
-            <span class="highlight">// callback: undefined</span>
+            // callback: undefined
 
-            <span class="highlight">// deps: undefined</span>
+            // deps: undefined
+
+            shim: {
+                'sammy': {
+                    deps: ['jquery'],
+                    exports: 'Sammy'
+                }
+            }
 
         };
 

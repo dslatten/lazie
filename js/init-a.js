@@ -85,13 +85,13 @@ var lazyFunction = function() {
 var oldOnload = window.onload;
 if (typeof window.onload != 'function') {
     window.onload = function() {
-        console.log('window.onload');
+        console.log('window.onload (?)');
         lazyFunction();
     }
 }
 else {
     window.onload = function() {
-        console.log('window.onload');
+        console.log('window.onload (?)');
         lazyFunction();
         if (oldOnload) {
             oldOnload();
