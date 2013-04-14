@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router', 'jquery'],
+﻿define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router2', 'jquery'],
 function (app, viewLocator, system, router, $) {
 
     system.debug(true);
@@ -12,7 +12,7 @@ function (app, viewLocator, system, router, $) {
         router.useConvention();
 
         app.adaptToDevice();
-        app.setRoot('app/samples/shell');
+        app.setRoot('app/samples/shell2');
 
     });
 
