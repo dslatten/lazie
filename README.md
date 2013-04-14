@@ -9,6 +9,7 @@ This repo is hosted via github pages, and the live test pages can be reached thr
 - [Page A](http://darrenslatten.com/lazie/page-a.html)
 - [Page B](http://darrenslatten.com/lazie/page-b.html)
 - [Page C](http://darrenslatten.com/lazie/page-c.html)
+- [Page D](http://darrenslatten.com/lazie/page-d.html)
 
 ## 3rd-Party Libs
 
