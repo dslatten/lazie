@@ -20,7 +20,7 @@
             <div class="primary">
                 <h1><a href="page-a.html">Page A</a></h1>
                 <p>
-                    The following content represents a basic overview of this page's script structure and [intended] execution flow. For a better (more reliable?) explanation of this page's loading behavior, check out the WebPagetest.org results.&#x00a0;&#x00a0;==>
+                    The following content represents a basic overview of this page's script structure and [intended] execution flow. When a particular script is mentioned below, it is linked to the "debug" version, as a convenient reference, but the page actually uses the minified versions when available. For a better (more reliable?) explanation of this page's loading behavior, re-run the WebPagetest.org results.&#x00a0;&#x00a0;==>
                 </p>
                 <h2>1.&#x00a0;&#x00a0;Load <a href="js/init-a.js">init-a.js</a></h2>
                 <p>
@@ -46,7 +46,7 @@
                 </ol>
                 <h3>2.1.&#x00a0;&#x00a0;Execute IIFE</h3>
                 <p>
-                    Dependencies <code>$</code> and <code>ko</code> are defined in the <abbr title="immediately invoked function expression">IIFE</abbr> in <a href="js/init-a.js">init-a.js</a>, via the <code>require</code> global object's <code>callback</code> property (i.e., the callback function to invoke when <a href="lib/require/require.js">require.js</a> is loaded):
+                    Dependencies <code>$</code> and <code>ko</code> are defined in the <abbr title="immediately invoked function expression">IIFE</abbr> in <a href="js/init-a.js">init-a.js</a>, via the <code>require</code> global object's <code>callback</code> property (i.e., the callback function to invoke when <a href="lib/require/require.debug.js">require.js</a> is loaded):
                 </p>
 <pre>
 <code>
@@ -72,7 +72,7 @@
 </pre>
                 <h3>2.2.&#x00a0;&#x00a0;Define <code>lazyFunction()</code> &#x0026; Attach to <code>window.load</code></h3>
                 <p>
-                    <a href="lib/require/require.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is omitted, because <a href="app/main-a.js">main-a.js</a> is already referenced in the <code>require</code> object's <code>callback</code> configuration (defined in <a href="js/init-a.js">init-a.js</a>'s <abbr title="immediately invoked function expression">IIFE</abbr>).
+                    <a href="lib/require/require.debug.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is omitted, because <a href="app/main-a.js">main-a.js</a> is already referenced in the <code>require</code> object's <code>callback</code> configuration (defined in <a href="js/init-a.js">init-a.js</a>'s <abbr title="immediately invoked function expression">IIFE</abbr>).
                 </p>
 <pre>
 <code>
@@ -88,8 +88,8 @@
     }
 </code>
 </pre>
-                <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.js">require.js</a></h2>
-                <h2>4.&#x00a0;&#x00a0;Load &#x0026; Execute jquery.js and knockout.js</h2>
+                <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.debug.js">require.js</a></h2>
+                <h2>4.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/jquery/jquery.debug.js">jquery.js</a> and <a href="lib/knockout/knockout.debug.js">knockout.js</a></h2>
                 <h2>5.&#x00a0;&#x00a0;Load <a href="app/main-a.js">main-a.js</a> and Begin App</h2>
             </div>
 
@@ -106,6 +106,7 @@
                 <ul>
                     <li><a href="page-a.html">Page A</a></li>
                     <li><a href="page-b.html">Page B</a></li>
+                    <li><a href="page-c.html">Page C</a></li>
                 </ul>
             </div>
 

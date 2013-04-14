@@ -20,7 +20,7 @@
             <div class="primary">
                 <h1><a href="page-b.html">Page B</a></h1>
                 <p>
-                    The following content represents a basic overview of this page's script structure and [intended] execution flow. For a better (more reliable?) explanation of this page's loading behavior, check out the WebPagetest.org results.&#x00a0;&#x00a0;==>
+                    The following content represents a basic overview of this page's script structure and [intended] execution flow. When a particular script is mentioned below, it is linked to the "debug" version, as a convenient reference, but the page actually uses the minified versions when available. For a better (more reliable?) explanation of this page's loading behavior, re-run the WebPagetest.org results.&#x00a0;&#x00a0;==>
                 </p>
                 <h2>1.&#x00a0;&#x00a0;Load <a href="js/init-b.js">init-b.js</a></h2>
                 <p>
@@ -46,7 +46,7 @@
                 </ol>
                 <h3>2.1.&#x00a0;&#x00a0;Execute IIFE</h3>
                 <p>
-                    Neither dependencies ( <code>require.deps</code> ) nor a callback function ( <code>require.callback</code> ) are defined in the <code>require</code> global object's configuration. It does, however, define a shim configuration for <a href="lib/sammy/sammy.js">sammy.js</a>.
+                    Neither dependencies ( <code>require.deps</code> ) nor a callback function ( <code>require.callback</code> ) are defined in the <code>require</code> global object's configuration. It does, however, define a shim configuration for <a href="lib/sammy/sammy.debug.js">sammy.js</a>.
                 </p>
 <pre>
 <code>
@@ -74,7 +74,7 @@
 </pre>
                 <h3>2.2.&#x00a0;&#x00a0;Define <code>lazyFunction()</code> &#x0026; Attach to <code>window.load</code></h3>
                 <p>
-                    <a href="lib/require/require.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is set to <a href="app/main-b.js">main-b.js</a>, which tells <a href="lib/require/require.js">require.js</a> to load it next (i.e., as soon as <a href="lib/require/require.js">require.js</a> is done loading).
+                    <a href="lib/require/require.debug.js">require.js</a> is dynamically loaded by <code>lazyFunction()</code> after the <code>window.load</code> event. The <code>data-main</code> attribute is set to <a href="app/main-b.js">main-b.js</a>, which tells <a href="lib/require/require.debug.js">require.js</a> to load it next (i.e., as soon as <a href="lib/require/require.debug.js">require.js</a> is done loading).
                 </p>
 <pre>
 <code>
@@ -91,7 +91,7 @@
     }
 </code>
 </pre>
-                <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.js">require.js</a></h2>
+                <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.debug.js">require.js</a></h2>
                 <h2>4.&#x00a0;&#x00a0;Load <a href="app/main-b.js">main-b.js</a> and Begin App</h2>
             </div>
 
@@ -114,6 +114,7 @@
                 <ul>
                     <li><a href="page-a.html">Page A</a></li>
                     <li><a href="page-b.html">Page B</a></li>
+                    <li><a href="page-c.html">Page C</a></li>
                 </ul>
             </div>
 
