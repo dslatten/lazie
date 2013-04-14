@@ -45,7 +45,7 @@ body .lazie {
 
     .lazie .page {
         width: 60em;
-        margin: 0 auto;
+        margin: 0 auto 20em auto;
     }
 
         .lazie .primary {
@@ -73,6 +73,11 @@ body .lazie {
 
             .lazie .secondary ul {
                 margin-left: 3.5em;
+            }
+
+            .lazie .secondary p {
+                margin-top: 0;
+                text-align: center;
             }
 
 .lazie h1,
