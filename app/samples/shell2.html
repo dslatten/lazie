@@ -1,7 +1,7 @@
 ﻿<div>
     <div class="navbar">
         <div class="navbar-inner">
-            <a class="brand" data-bind="attr: { href: router.visibleRoutes()[0].hash }">
+            <a class="brand" data-bind="attr: { href: window.location.pathname }">
                 <span>Durandal</span>
             </a>
             <ul class="nav" data-bind="foreach: router.visibleRoutes">

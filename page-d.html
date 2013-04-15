@@ -38,7 +38,7 @@
 </pre>
                 <h2>2.&#x00a0;&#x00a0;Execute <a href="js/init-d.js">init-d.js</a></h2>
                 <p>
-                    <a href="js/init-d.js">init-d.js</a> is just like <a href="js/init-b.js">init-b.js</a>, except that it wraps everything in an IIFE.
+                    <a href="js/init-d.js">init-d.js</a> is just like <a href="js/init-c.js">init-c.js</a>.
                 </p>
 <pre>
 <code>
@@ -80,22 +80,31 @@
 </pre>
                 <h2>3.&#x00a0;&#x00a0;Load &#x0026; Execute <a href="lib/require/require.debug.js">require.js</a></h2>
                 <h2>4.&#x00a0;&#x00a0;Load <a href="app/main-d.js">main-d.js</a> and Begin App</h2>
+                <p>
+                    The main difference between this page and the others is that this page uses modified copies of Durandal's router plugin (<a href="lib/durandal/plugins/router2.js">router2.js</a>) and shell (<a href="app/samples/shell2.js">shell2.js</a> &#x0026; <a href="app/samples/shell2.html">shell2.html</a>. The modifications are intended to make the sample application load its default route <b>without changing the URL</b> (e.g., by appending a hash 'n' slash). In other words, on pages <a href="page-a.html">A</a>, <a href="page-b.html">B</a>, and <a href="page-c.html">C</a>, the sample app is coded such that all routes depend on a URL hash ( <code>#/</code> ). So for example, <a href="page-a.html">page-a.html</a> automatically changes to <a href="page-a.html#/">page-a.html#/</a>, and `#/` triggers the default route. In contrast, Page D is coded such that <a href="page-d.html">page-d.html</a> alone (i.e., without a hash) triggers the default route.
+                </p>
+                <p>
+                    This distinction seems to make a huge difference in how WebPagetest.org's waterfall graphs are rendered. Specifically, only Page D's waterfalls look as you'd expect: with a few HTTP requests before the <em>Document Complete</em> line, and everything else (i.e., the sample app's modules) loading after it.
+                </p>
+                <p>
+                    Yet to be determined...is whether this difference is due to browsers behaving differently or WebPagetest.org calculating the <em>Document Complete</em> event differently.
+                </p>
             </div>
 
             <div class="secondary">
                 <h2><a href="http://www.webpagetest.org/">WebPagetest.org</a> Results</h2>
                 <ul>
-                    <li><a href="">IE6</a></li>
-                    <li><a href="">IE7</a></li>
-                    <li><a href="">IE8</a></li>
-                    <li><a href="">IE9</a></li>
-                    <li><a href="">IE10</a></li>
-                    <li><a href="">Firefox</a></li>
-                    <li><a href="">Chrome</a></li>
-                    <li><a href="">Safari (Windows)</a></li>
-                    <li><a href="">iOS 5.1 (iPhone 4)</a></li>
-                    <li><a href="">IE6 + Chrome Frame</a></li>
-                    <li><a href="">Android 2.1 (Nexus S)</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_MX_VG1/">IE6</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_PF_VGH/">IE7</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_0J_VGM/">IE8</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_A8_VH3/">IE9</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_W7_VHB/">IE10</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_AJ_VHN/">Firefox</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_JS_VHH/">Chrome</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_CH_VHS/">Safari (Windows)</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_QM_VJ2/">iOS 5.1 (iPhone 4)</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_D9_VHX/">IE6 + Chrome Frame</a></li>
+                    <li><a href="http://www.webpagetest.org/result/130414_W7_VJ9/">Android 2.1 (Nexus S)</a></li>
                 </ul>
                 <h2>Test Pages</h2>
                 <ul>
